@@ -4,6 +4,8 @@
  */
 package context;
 
+import java.sql.Connection;
+
 /**
  *
  * @author Radriar
