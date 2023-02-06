@@ -17,7 +17,7 @@
     <label for="txtConfirmNewPassword">Confirm New Password</label>
     <input type="password" name="txtConfirmNewPassword" id="txtConfirmNewPassword">
     <br>
-    <input type="button" value="Save New Password">
+    <input type="button" value="Save">
 </form>
 </body>
 </html>
