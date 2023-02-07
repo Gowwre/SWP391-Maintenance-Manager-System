@@ -28,6 +28,9 @@ public class MaintenanceStaff implements Serializable {
     public MaintenanceStaff() {
     }
 
+    public MaintenanceStaff(String email, String password) {
+    }
+
     public int getStaffID() {
         return staffID;
     }
