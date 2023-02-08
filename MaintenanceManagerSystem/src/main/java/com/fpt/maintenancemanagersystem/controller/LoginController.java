@@ -41,10 +41,8 @@ public class LoginController extends HttpServlet {
         boolean isValidLogin = staff != null;
         try {
             if (isValidLogin){
-                //Move to homepage
                 forwardToHomePage(request,response);
             }else {
-                //Send an error message to the login screen.
                 sendErrorMessage(request,response);
             }
         } catch (ServletException | IOException e) {
