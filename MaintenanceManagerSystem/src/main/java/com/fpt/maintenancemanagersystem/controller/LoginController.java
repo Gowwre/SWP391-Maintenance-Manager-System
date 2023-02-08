@@ -36,12 +36,11 @@ public class LoginController extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        MaintenanceStaffDAO maintenanceStaffDAO  = new MaintenanceStaffDAO();
-        MaintenanceStaff loggedInStaff = maintenanceStaffDAO.login(email,password);
+        MaintenanceStaff staff = getStaffByCredentials(email, password);
 
-        boolean staffExists = loggedInStaff != null;
+        boolean isValidLogin = staff != null;
         try {
-            if (staffExists){
+            if (isValidLogin){
                 //Move to homepage
                 forwardToHomePage(request,response);
             }else {
@@ -54,6 +53,12 @@ public class LoginController extends HttpServlet {
 
     }
 
+    private static MaintenanceStaff getStaffByCredentials(String email, String password) {
+        MaintenanceStaffDAO staffDao = new MaintenanceStaffDAO();
+        MaintenanceStaff staff = staffDao.login(email, password);
+        return staff;
+    }
+
     private void forwardToHomePage(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
         request.getRequestDispatcher("homepage.jsp").forward(request,response);
     }
@@ -62,7 +67,7 @@ public class LoginController extends HttpServlet {
         String errorMessage = "Sai thông tin đăng nhập, vui lòng thử lại";
         String loginPage = "login.jsp";
 
-        request.setAttribute("INVALID_CREDENTIAL",errorMessage);
+        request.setAttribute("LOGIN_ERROR",errorMessage);
         request.getRequestDispatcher(loginPage).forward(request,response);
     }
 
