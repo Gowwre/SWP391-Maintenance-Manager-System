@@ -45,11 +45,11 @@
                     <form action="login" method="get">
                         <section class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" name="email" class="form-control" id="email">
+                            <input type="email" required name="email" class="form-control" id="email">
                         </section>
                         <section class="form-group">
                             <label for="password">Mật Khẩu</label>
-                            <input type="password" name="password" class="form-control" id="password">
+                            <input type="password" required name="password" class="form-control" id="password">
                         </section>
                         <button type="submit" class="btn btn-primary">Đăng Nhập</button>
                         <c:if test="${requestScope.LOGIN_ERROR != null}">
