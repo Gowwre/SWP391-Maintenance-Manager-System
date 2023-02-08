@@ -52,12 +52,12 @@
                             <input type="password" name="password" class="form-control" id="password">
                         </section>
                         <button type="submit" class="btn btn-primary">Đăng Nhập</button>
-                        <c:if test="${requestScope.INVALID_CREDENTIAL != null}">
+                        <c:if test="${requestScope.LOGIN_ERROR != null}">
                             <br>
-                            <p>${requestScope.INVALID_CREDENTIAL}</p>
+                            <p>${requestScope.LOGIN_ERROR}</p>
                         </c:if>
                         <footer class="text-center mt-3">
-                            <a href="#" class="btn btn-link">Quên Mật Khẩu</a>
+                            <a href="forgotPassword.jsp" class="btn btn-link">Quên Mật Khẩu</a>
                             <a href="#" class="btn btn-link">Đăng Ký</a>
                         </footer>
                     </form>
