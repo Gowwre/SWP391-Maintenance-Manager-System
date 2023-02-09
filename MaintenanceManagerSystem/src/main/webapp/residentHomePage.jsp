@@ -17,11 +17,14 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
     </head>
     <body>
-        <section style = "height: 60px"> 
-            <nav class="navbar fixed-top shadow" style = "height: 60px; background: #F7ECE2">
-               <a class="navbar-brand py-0 border"  href="residentHomePage.jsp">Logo</a> 
-            </nav>
-        </section>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="residentHomePage.jsp">Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
         <div class="container mt-5 d-grid">
             <div class="row" >
                 <div class="border col text-center">
@@ -36,8 +39,8 @@
                     <h2>Đăng nhập</h2>
                     <br/>
                     <div class="d-grid">
-                        <p><a class="btn btn-primary btn-block" style="width: 300px" href="mangerLogIn.jsp">Đăng nhập với tư cách người quản lý</a></p>
-                        <p><a class="btn btn-primary btn-block" style="width: 300px" href="mStaffLogin.jsp">Đăng nhập với tư cách nhân viên sửa chữa</a></p>
+                        <p><a class="btn btn-primary btn-block" style="width: 300px" href="managerHomePage.jsp">Đăng nhập với tư cách người quản lý</a></p>
+                        <p><a class="btn btn-primary btn-block" style="width: 300px" href="mStaffHomePage.jsp">Đăng nhập với tư cách nhân viên sửa chữa</a></p>
                     </div>
                 </div>
             </div>
