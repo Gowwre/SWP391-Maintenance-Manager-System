@@ -1,13 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: Radriar
-  Date: 2/6/2023
-  Time: 3:48 PM
+  Date: 2/8/2023
+  Time: 11:22 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +29,7 @@
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
         }
     </style>
-    <title>Login Form</title>
+    <title>Đặt Mật Khẩu Mới</title>
 </head>
 <body>
 <section class="container mt-5">
@@ -39,26 +37,20 @@
         <article class="col-md-6 mx-auto">
             <section class="card">
                 <header class="card-header">
-                    <h3>Đăng Nhập</h3>
+                    <h3>Đặt Mật Khẩu Mới</h3>
                 </header>
                 <section class="card-body">
-                    <form action="login" method="get">
+                    <form>
                         <section class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" required name="email" class="form-control" id="email">
+                            <label for="new-password">Mật Khẩu Mới</label>
+                            <input type="password" required class="form-control" id="new-password" name="new-password">
                         </section>
                         <section class="form-group">
-                            <label for="password">Mật Khẩu</label>
-                            <input type="password" required name="password" class="form-control" id="password">
+                            <label for="confirm-password">Xác Nhận Mật Khẩu</label>
+                            <input type="password" required class="form-control" id="confirm-password" name="confirm-password">
                         </section>
-                        <button type="submit" class="btn btn-primary">Đăng Nhập</button>
-                        <c:if test="${requestScope.LOGIN_ERROR != null}">
-                            <br>
-                            <p>${requestScope.LOGIN_ERROR}</p>
-                        </c:if>
-                        <footer class="text-center mt-3">
-                            <a href="forgotPassword.jsp" class="btn btn-link">Quên Mật Khẩu</a>
-                            <a href="#" class="btn btn-link">Đăng Ký</a>
+                        <footer class="text-center">
+                            <button type="submit" class="btn btn-primary">Đặt Lại Mật Khẩu</button>
                         </footer>
                     </form>
                 </section>
