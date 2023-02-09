@@ -4,10 +4,12 @@
  */
 package com.fpt.maintenancemanagersystem.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Radriar
  */
-public class WorkOrder {
+public class WorkOrder implements Serializable {
     
 }
