@@ -63,7 +63,7 @@ public class LoginController extends HttpServlet {
 
     private void sendErrorMessage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String errorMessage = "Sai thông tin đăng nhập, vui lòng thử lại";
-        String loginPage = "login.jsp";
+        String loginPage = "maintenanceStaffLogin.jsp";
 
         request.setAttribute("LOGIN_ERROR",errorMessage);
         request.getRequestDispatcher(loginPage).forward(request,response);
