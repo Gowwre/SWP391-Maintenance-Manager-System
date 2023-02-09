@@ -52,7 +52,7 @@ public class LoginForManagerController extends HttpServlet {
 
     private void sendErrorMessage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("LOGN_ERROR","Sai thông tin đăng nhập, vui lòng thử lại");
-        request.getRequestDispatcher("loginForManager.jsp").forward(request,response);
+        request.getRequestDispatcher("maintenanceManagerLogin.jsp").forward(request,response);
     }
 
     private MaintenanceManager getManagerByCredentials(String email, String password) {
