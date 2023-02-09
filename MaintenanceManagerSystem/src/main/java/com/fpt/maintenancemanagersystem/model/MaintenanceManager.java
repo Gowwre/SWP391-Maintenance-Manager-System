@@ -19,6 +19,11 @@ public class MaintenanceManager implements Serializable {
     public MaintenanceManager() {
     }
 
+    public MaintenanceManager(String email, String password) {
+        this.email=email;
+        this.password=password;
+    }
+
     public int getManagerID() {
         return managerID;
     }
