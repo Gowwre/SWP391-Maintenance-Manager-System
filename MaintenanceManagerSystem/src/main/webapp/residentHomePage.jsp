@@ -36,8 +36,8 @@
                     <h2>Đăng nhập</h2>
                     <br/>
                     <div class="d-grid">
-                        <p><a class="btn btn-primary btn-block" style="width: 300px" href="mangerLogIn.jsp">Đăng nhập với tư cách người quản lý</a></p>
-                        <p><a class="btn btn-primary btn-block" style="width: 300px" href="mStaffLogin.jsp">Đăng nhập với tư cách nhân viên sửa chữa</a></p>
+                        <p><a class="btn btn-primary btn-block" style="width: 300px" href="maintenanceManagerLogin.jsp">Đăng nhập với tư cách người quản lý</a></p>
+                        <p><a class="btn btn-primary btn-block" style="width: 300px" href="maintenanceStaffLogin.jsp">Đăng nhập với tư cách nhân viên sửa chữa</a></p>
                     </div>
                 </div>
             </div>
