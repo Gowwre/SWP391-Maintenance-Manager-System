@@ -42,7 +42,7 @@
                     <h3>Đăng Nhập</h3>
                 </header>
                 <section class="card-body">
-                    <form action="login" method="get">
+                    <form action="login" method="post">
                         <section class="form-group">
                             <label for="email">Email</label>
                             <input type="email" required name="email" class="form-control" id="email">

@@ -8,11 +8,12 @@ import com.fpt.maintenancemanagersystem.dal.MaintenanceStaffDAO;
 import com.fpt.maintenancemanagersystem.model.MaintenanceStaff;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -41,7 +42,7 @@ public class LoginController extends HttpServlet {
         boolean isValidLogin = staff != null;
         try {
             if (isValidLogin){
-                forwardToHomePage(request,response);
+                forwardToStaffHomePage(request,response);
             }else {
                 sendErrorMessage(request,response);
             }
@@ -53,13 +54,26 @@ public class LoginController extends HttpServlet {
 
     private static MaintenanceStaff getStaffByCredentials(String email, String password) {
         MaintenanceStaffDAO staffDao = new MaintenanceStaffDAO();
-        MaintenanceStaff staff = staffDao.login(email, password);
+        MaintenanceStaff staff = null;
+        try {
+            staff = staffDao.login(email, password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         return staff;
     }
 
-    private void forwardToHomePage(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-        request.getRequestDispatcher("homepage.jsp").forward(request,response);
+    private void forwardToStaffHomePage(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
+        //1. set the session for the staff that just login
+        //2. forward to staffHomePage.jsp
+        HttpSession session = request.getSession();
+        session.setAttribute("staff", getStaffByCredentials(request.getParameter("email"), request.getParameter("password")));
+        request.getRequestDispatcher("staffHomePage.jsp").forward(request,response);
+
     }
+
 
     private void sendErrorMessage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String errorMessage = "Sai thông tin đăng nhập, vui lòng thử lại";
@@ -78,11 +92,7 @@ public class LoginController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
+
 
     /**
      * Handles the HTTP <code>POST</code> method.
