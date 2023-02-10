@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class DBContext {
     public static Connection makeConnection()
             throws SQLException, ClassNotFoundException {
-        String url = "jdbc:sqlserver://localhost:1433;databaseName=";
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=Maintenance";
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         return DriverManager.getConnection(url, "sa", "12345");
     }
