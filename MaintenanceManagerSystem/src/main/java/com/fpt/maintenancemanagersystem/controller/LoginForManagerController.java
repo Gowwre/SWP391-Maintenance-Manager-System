@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * @author Radriar
@@ -28,7 +29,7 @@ public class LoginForManagerController extends HttpServlet {
      * @throws IOException      if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
         response.setContentType("text/html;charset=UTF-8");
 
         String email = request.getParameter("email");
@@ -51,11 +52,11 @@ public class LoginForManagerController extends HttpServlet {
     }
 
     private void sendErrorMessage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("LOGN_ERROR","Sai thông tin đăng nhập, vui lòng thử lại");
+        request.setAttribute("LOGIN_ERROR","Sai thông tin đăng nhập, vui lòng thử lại");
         request.getRequestDispatcher("maintenanceManagerLogin.jsp").forward(request,response);
     }
 
-    private MaintenanceManager getManagerByCredentials(String email, String password) {
+    private MaintenanceManager getManagerByCredentials(String email, String password) throws SQLException, ClassNotFoundException {
         MaintenaceManagerDAO maintenaceManagerDAO = new MaintenaceManagerDAO();
         MaintenanceManager manager = maintenaceManagerDAO.login(email, password);
         return manager;
@@ -71,11 +72,7 @@ public class LoginForManagerController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException      if an I/O error occurs
      */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
+
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -88,7 +85,13 @@ public class LoginForManagerController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
