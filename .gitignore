@@ -175,3 +175,5 @@ build/
 .vscode/
 
 maintenancemanagersystem/nb-configuration.xml
+
+maintenancemanagersystem/nbactions.xml
