@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +20,7 @@
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     }
   </style>
-  <title>Change Password</title>
+  <title>Login Form</title>
 </head>
 <body>
 <section class="container mt-5">
@@ -29,24 +28,23 @@
     <article class="col-md-6 mx-auto">
       <section class="card">
         <header class="card-header">
-          <h3>Change Password</h3>
+          <h3>Đăng Nhập Với Tư Cách Người Quản Lý</h3>
         </header>
         <section class="card-body">
-          <form>
+          <form action="loginManager" method="post">
             <section class="form-group">
-              <label for="current-password">Current Password</label>
-              <input type="password" required class="form-control" id="current-password" name="current-password">
+              <label for="email">Email</label>
+              <input type="email" required name="email" class="form-control" id="email">
             </section>
             <section class="form-group">
-              <label for="new-password">New Password</label>
-              <input type="password" required class="form-control" id="new-password" name="new-password">
+              <label for="password">Mật Khẩu</label>
+              <input type="password" required name="password" class="form-control" id="password">
             </section>
-            <section class="form-group">
-              <label for="confirm-password">Confirm Password</label>
-              <input type="password" required class="form-control" id="confirm-password" name="confirm-password">
-            </section>
-            <footer class="text-center">
-              <button type="submit" class="btn btn-primary">Change Password</button>
+            <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+
+            <footer class="text-center mt-3">
+              <a href="" class="btn btn-link">Quên Mật Khẩu</a>
+              <a href="#" class="btn btn-link">Đăng Ký</a>
             </footer>
           </form>
         </section>
@@ -56,5 +54,3 @@
 </section>
 </body>
 </html>
-
-
