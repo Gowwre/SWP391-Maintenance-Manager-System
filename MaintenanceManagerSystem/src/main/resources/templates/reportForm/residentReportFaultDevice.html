@@ -18,27 +18,27 @@
                     <h3>Báo cáo về thiết bị lỗi</h3>
                 </div>
                 <div class="card-body">
-                    <form action="reportFaultDevice" method="Post">
+                    <form action="#" th:action="@{/createReport}" th:object="${residentReportedIssue}" method="Post">
 
                         <div class="form-group">
                             <p>Số phòng: </p>
-                            <input type="text" class="form-control" placeholder="Ex: 101" name="RoomNum" required>
+                            <input type="text" class="form-control" placeholder="Ex: 101" name="RoomNum" required th:field="*{roomId}">
                             <br/>
                             <p>Họ và tên: </p>
-                            <input type="text" class="form-control" name="Name">
+                            <input type="text" class="form-control" name="Name" th:field="*{residentName}">
                             <br/>
                             <p>Email: </p>
-                            <input type="email" class="form-control" placeholder="abc@gmail.com" name="Email">
+                            <input type="email" class="form-control" placeholder="abc@gmail.com" name="Email" th:field="*{residentEmail}">
                             <br/>
                             <p>Số điện thoại: </p>
-                            <input type="text" class="form-control" name="PhoneNum" required>
+                            <input type="text" class="form-control" name="PhoneNum" required th:field="*{residentPhoneNumber}">
                             <br/>
                             <p>Thiết bị bị hư: </p>
                             <input type="text" class="form-control" placeholder="tivi, tủ lạnh" name="PhoneNum"
-                                   required>
+                                   required >
                             <br/>
                             <p>Vấn đề về thiết bị hư: </p>
-                            <textarea class="form-control" name="Description" required></textarea>
+                            <textarea class="form-control" name="Description" required th:field="*{description}"></textarea>
                             <br/>
                             <input type="submit" value="Gửi" class="btn btn-dark">
                         </div>
