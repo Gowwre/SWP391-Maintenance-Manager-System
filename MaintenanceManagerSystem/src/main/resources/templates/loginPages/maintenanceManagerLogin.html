@@ -31,17 +31,17 @@
           <h3>Đăng Nhập Với Tư Cách Người Quản Lý</h3>
         </header>
         <section class="card-body">
-          <form action="loginManager" method="post">
+          <form action="#" th:action="@{/managerLogin}" th:object="${manager}" method="post">
             <section class="form-group">
               <label for="email">Email</label>
-              <input type="email" required name="email" class="form-control" id="email">
+              <input type="email" required name="email" th:field="*{email}" class="form-control" id="email">
             </section>
             <section class="form-group">
               <label for="password">Mật Khẩu</label>
-              <input type="password" required name="password" class="form-control" id="password">
+              <input type="password" required name="password" th:field="*{password}" class="form-control" id="password">
             </section>
             <button type="submit" class="btn btn-primary">Đăng Nhập</button>
-
+            <p th:object="${errorMessage}" th:text="${errorMessage}" style="color: red"></p>
             <footer class="text-center mt-3">
               <a href="" class="btn btn-link">Quên Mật Khẩu</a>
               <a href="#" class="btn btn-link">Đăng Ký</a>

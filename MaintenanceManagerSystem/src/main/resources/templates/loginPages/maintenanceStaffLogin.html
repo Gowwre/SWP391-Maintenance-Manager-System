@@ -31,7 +31,7 @@
                     <h3>Đăng Nhập</h3>
                 </header>
                 <section class="card-body">
-                    <form action="login" method="post">
+                    <form action="#" th:action="@{/staffLogin}" method="post">
                         <section class="form-group">
                             <label for="email">Email</label>
                             <input type="email" required name="email" class="form-control" id="email">
@@ -41,6 +41,7 @@
                             <input type="password" required name="password" class="form-control" id="password">
                         </section>
                         <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+                        <p th:object="${errorMessage}" th:text="${errorMessage}" style="color: red"></p>
                         <footer class="text-center mt-3">
                             <a href="forgotPassword" class="btn btn-link">Quên Mật Khẩu</a>
                         </footer>
