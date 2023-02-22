@@ -1,4 +1,3 @@
-
 package com.fptu.maintenancemanagersystem.model;
 
 import lombok.Getter;
