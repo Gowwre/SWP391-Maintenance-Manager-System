@@ -22,7 +22,10 @@
 
                         <div class="form-group">
                             <p>Số phòng: </p>
-                            <input type="text" class="form-control" placeholder="Ex: 101" name="RoomNum" required th:field="*{roomId}">
+
+                            <select class="form-select" name="roomNumber" required th:field="*{roomNumber}">
+                                <option th:each="room : ${allRooms}" th:value="${room.roomNumber}" th:text="${room.roomNumber}"></option>
+                            </select>
                             <br/>
                             <p>Họ và tên: </p>
                             <input type="text" class="form-control" name="Name" th:field="*{residentName}">
@@ -34,7 +37,7 @@
                             <input type="text" class="form-control" name="PhoneNum" required th:field="*{residentPhoneNumber}">
                             <br/>
                             <p>Thiết bị bị hư: </p>
-                            <input type="text" class="form-control" placeholder="tivi, tủ lạnh" name="PhoneNum"
+                            <input type="text" class="form-control" placeholder="tivi, tủ lạnh" name=""
                                    required >
                             <br/>
                             <p>Vấn đề về thiết bị hư: </p>
