@@ -14,14 +14,13 @@ public class ResidentReportedIssueRepository {
     JdbcTemplate jdbcTemplate;
 
     public void insertResidentReportedIssue(ResidentReportedIssue residentReportedIssue) {
-        String SQL="INSERT INTO [ResidentReportedIssue] (room_number,resident_name,resident_email,resident_phone_number,description,date_reported) VALUES (?,?,?,?,?,?)";
+        String SQL = "INSERT INTO [ResidentReportedIssue] (room_number,resident_name,resident_email,resident_phone_number,description,date_reported) VALUES (?,?,?,?,?,?)";
         jdbcTemplate.update(SQL, residentReportedIssue.getRoomNumber(),
                 residentReportedIssue.getResidentName(),
                 residentReportedIssue.getResidentEmail(),
                 residentReportedIssue.getResidentPhoneNumber(),
                 residentReportedIssue.getDescription(),
                 Date.valueOf(LocalDate.now()));
-
     }
 
 }
