@@ -1,4 +1,4 @@
-package com.fptu.maintenancemanagersystem.service.Staff;
+package com.fptu.maintenancemanagersystem.service;
 
 import com.fptu.maintenancemanagersystem.dao.Staff.StaffRepository;
 import com.fptu.maintenancemanagersystem.model.Staff;

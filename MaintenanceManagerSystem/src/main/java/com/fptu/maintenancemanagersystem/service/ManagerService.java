@@ -1,4 +1,4 @@
-package com.fptu.maintenancemanagersystem.service.Manager;
+package com.fptu.maintenancemanagersystem.service;
 
 import com.fptu.maintenancemanagersystem.dao.Manager.ManagerRepository;
 import com.fptu.maintenancemanagersystem.model.Manager;

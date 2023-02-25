@@ -2,8 +2,8 @@ package com.fptu.maintenancemanagersystem.controller;
 
 import com.fptu.maintenancemanagersystem.model.ResidentReportedIssue;
 import com.fptu.maintenancemanagersystem.model.Room;
-import com.fptu.maintenancemanagersystem.service.ResidentReportedIssue.ResidentReportedIssueService;
-import com.fptu.maintenancemanagersystem.service.Room.RoomService;
+import com.fptu.maintenancemanagersystem.service.ResidentReportedIssueService;
+import com.fptu.maintenancemanagersystem.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -4,12 +4,16 @@
  */
 package com.fptu.maintenancemanagersystem.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  *
  * @author lmphi
  */
-public class Room_Equipment {
-    public int id;
-    public int equipmentID;
+
+@Getter @Setter @NoArgsConstructor
+public class FaultDevice {
     
 }

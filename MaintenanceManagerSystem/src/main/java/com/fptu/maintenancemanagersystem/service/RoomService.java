@@ -1,4 +1,4 @@
-package com.fptu.maintenancemanagersystem.service.Room;
+package com.fptu.maintenancemanagersystem.service;
 
 import com.fptu.maintenancemanagersystem.dao.Room.RoomRepository;
 import com.fptu.maintenancemanagersystem.model.Room;

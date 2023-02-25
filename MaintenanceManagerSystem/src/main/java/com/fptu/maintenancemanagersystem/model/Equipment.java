@@ -13,6 +13,7 @@ import lombok.Setter;
  *
  * @author lmphi
  */
+
 @Getter @Setter @NoArgsConstructor
 public class Equipment {
     public int id;

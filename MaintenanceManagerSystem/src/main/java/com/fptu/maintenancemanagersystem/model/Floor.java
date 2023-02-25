@@ -12,6 +12,7 @@ import lombok.Setter;
  *
  * @author lmphi
  */
+
 @Getter @Setter @NoArgsConstructor
 public class Floor {
     public int id;

@@ -1,4 +1,4 @@
-package com.fptu.maintenancemanagersystem.service.ResidentReportedIssue;
+package com.fptu.maintenancemanagersystem.service;
 
 import com.fptu.maintenancemanagersystem.dao.ResidentReportedIssue.ResidentReportedIssueRepository;
 import com.fptu.maintenancemanagersystem.model.ResidentReportedIssue;
